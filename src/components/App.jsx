@@ -1,8 +1,8 @@
 import { Routes, Route} from "react-router-dom";
-import Home from "pages/Home";
-import Login from "pages/Login";
-import Register from "pages/Register";
-import Contacts from "pages/Contacts";
+import Home from "pages/Home/Home";
+import Login from "pages/Login/Login";
+import Register from "pages/Register/Register";
+import Contacts from "pages/Contacts/Contacts";
 import Layout from "./Layout/Layout";
 
 export const App = () => {
