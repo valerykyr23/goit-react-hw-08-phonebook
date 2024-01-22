@@ -3,7 +3,7 @@ import Home from "pages/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import Contacts from "pages/Contacts";
-import Layout from "./Layout";
+import Layout from "./Layout/Layout";
 
 export const App = () => {
   return (
