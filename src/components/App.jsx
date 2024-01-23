@@ -9,12 +9,19 @@ export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: "column",
-        // alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
+        // height: '100vh',
+        // display: 'flex',
+        // flexDirection: "column",
+        // // alignItems: 'center',
+        // fontSize: 40,
+        // color: '#010101'
+        maxWidth: '1170px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  paddingLeft: '15px',
+  paddingRight: '15px',
+  paddingBottom: '50px',
+  textAlign: 'center'
       }}
     >
 
