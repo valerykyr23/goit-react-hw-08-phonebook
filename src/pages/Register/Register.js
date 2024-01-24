@@ -9,11 +9,15 @@ const Register = () => {
 
   const dispatch = useDispatch();
 
-const [form, setForm] = useState({ name: '', email: '', password: '' });
+  const [form, setForm] = useState({ name: '', email: '', password: '' });
+  
+  
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
     setForm(prevForm => ({ ...prevForm, [name]: value }));
+    
+  
   };
 
   const handleSubmit = e => {
