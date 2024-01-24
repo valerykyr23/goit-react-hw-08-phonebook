@@ -5,6 +5,16 @@ import Notiflix from "notiflix";
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
+
+const token = {
+    set(token) {
+axios.defaults.headers.common.Authorization = `Bearer ${token}`
+    },
+    unset() {
+        axios.defaults.headers.common.Authorization = '';
+    }
+}
+
    const register = createAsyncThunk(
     "auth/register",
     async (credentials, thunkAPI) => {
@@ -13,7 +23,9 @@ axios.defaults.baseURL = "https://connections-api.herokuapp.com";
             Notiflix.Notify.success(
           `New user was successfully created !`
         );
+        token.set(data.token);
             return data;
+
         }
         catch (error) {
             Notiflix.Notify.failure(
@@ -32,7 +44,8 @@ const logIn = createAsyncThunk(
             const { data } = await axios.post("/users/login", credentials);
             Notiflix.Notify.success(
           `You successfully logged in !`
-        );
+            );
+            token.set(data.token);
             return data;
         }
         catch (error) {
@@ -50,11 +63,12 @@ const logOut = createAsyncThunk(
     async (thunkAPI) => {
     
         try {
-            const { data } = await axios.post("/users/logout");
+            await axios.post("/users/logout");
             Notiflix.Notify.success(
           `You successfully logged out !`
-        );
-            return data;
+            );
+            token.unset();
+            
      }
         catch (error) {
             Notiflix.Notify.failure(

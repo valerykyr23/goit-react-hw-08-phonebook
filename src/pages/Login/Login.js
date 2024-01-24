@@ -3,7 +3,7 @@ import { Button, TextField } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from 'some/auth/auth-operations';
-import { selectIsLoggedIn, selectUserName } from 'some/auth/auth-selectors';
+import { getIsLoggedIn, selectIsLoggedIn, selectUserName } from 'some/auth/auth-selectors';
 import css from "./Login.module.css";
 
 
@@ -11,6 +11,8 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const Uname = useSelector(selectUserName);
+
+  const logar = useSelector(getIsLoggedIn);
 
   const [form, setForm] = useState({ email: '', password: '' });
   
@@ -28,7 +30,7 @@ const Login = () => {
     dispatch(authOperations.logIn({ ...form }));
     setForm({ email: '', password: '' });
 
-    console.log(Uname);
+    console.log(logar);
   };
 
   const { email, password } = form;
