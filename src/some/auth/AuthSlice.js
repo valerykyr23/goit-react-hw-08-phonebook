@@ -29,7 +29,8 @@ const AuthSlice = createSlice({
                 state.error = action.payload;
             })
         .addCase(authOperations.logIn.pending, (state, action) => {
-                state.error = null;
+            state.error = null;
+            
             })
     
             .addCase(authOperations.logIn.fulfilled, (state, action) => {
@@ -39,6 +40,7 @@ const AuthSlice = createSlice({
             })
             .addCase(authOperations.logIn.rejected, (state, action) => {
                 state.error = action.payload;
+             
             })
       
       

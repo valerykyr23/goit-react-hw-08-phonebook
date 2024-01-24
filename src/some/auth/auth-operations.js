@@ -45,9 +45,32 @@ const logIn = createAsyncThunk(
 );
 
 
+const logOut = createAsyncThunk(
+    'auth/logout', 
+    async (thunkAPI) => {
+    
+        try {
+            const { data } = await axios.post("/users/logout");
+            Notiflix.Notify.success(
+          `You successfully logged out !`
+        );
+            return data;
+     }
+        catch (error) {
+            Notiflix.Notify.failure(
+                `User could not be logged out`
+            );
+        return thunkAPI.rejectWithValue(error.message);
+    }
+}
+    
+)
+
+
 const authOperations = {
     register,
-    logIn
+    logIn,
+    logOut
 };
 
 export default authOperations;

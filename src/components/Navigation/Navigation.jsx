@@ -1,5 +1,4 @@
-import css from "./Navigation.module.css";
-
+import css from './Navigation.module.css';
 
 const Navigation = () => {
   return (
@@ -7,13 +6,8 @@ const Navigation = () => {
       <NavLink to="/" className={css.link}>
         Home
       </NavLink>
-
-      <NavLink to="/contacts" className={css.link}>
-        Contacts
-      </NavLink>
     </nav>
   );
 };
-
 
 export default Navigation;

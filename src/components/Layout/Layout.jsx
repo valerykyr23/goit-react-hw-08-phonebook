@@ -1,23 +1,24 @@
+import AuthNav from 'components/AuthNav/AuthNav';
+import UserNav from 'components/UserNav/UserNav';
+import { useSelector } from 'react-redux';
 import { NavLink, Outlet } from 'react-router-dom';
+import { selectUserName } from 'some/auth/auth-selectors';
 import css from './Layout.module.css';
 
 const Layout = () => {
+
+
+  const uname = useSelector(selectUserName);
+
   return (
-    <div>
+    <div >
+      <header>
           <nav >
             
-        <NavLink to="/" className={css.link}> Home Page</NavLink>
-
-        <NavLink to="/contacts" className={css.link}> My Contacts</NavLink>
-       
-        <NavLink to="/register" className={css.link}> Sign up</NavLink>
-              
-        <NavLink to="/login" className={css.link}> Login Page</NavLink>
-      
-
-
+        <NavLink to="/" className={css.link}> Home Page</NavLink> {uname ? <UserNav/> : <AuthNav/>}
+  
       </nav>
-
+</header>
       <main>
         <Outlet />
       </main>

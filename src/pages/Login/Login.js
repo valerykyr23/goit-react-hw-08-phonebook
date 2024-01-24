@@ -1,14 +1,16 @@
 
 import { Button, TextField } from '@mui/material';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import authOperations from 'some/auth/auth-operations';
+import { selectIsLoggedIn, selectUserName } from 'some/auth/auth-selectors';
 import css from "./Login.module.css";
 
 
 const Login = () => {
 
- const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const Uname = useSelector(selectUserName);
 
   const [form, setForm] = useState({ email: '', password: '' });
   
@@ -25,6 +27,8 @@ const Login = () => {
     e.preventDefault();
     dispatch(authOperations.logIn({ ...form }));
     setForm({ email: '', password: '' });
+
+    console.log(Uname);
   };
 
   const { email, password } = form;

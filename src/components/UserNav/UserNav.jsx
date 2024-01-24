@@ -1,10 +1,15 @@
 import { Button } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import authOperations from "some/auth/auth-operations";
 import css from "./UserNav.module.css";
 
 
 
 
 const UserNav = () => {
+
+  const dispatch = useDispatch();
 
   return (
     <div className={css.container}>
@@ -15,14 +20,20 @@ const UserNav = () => {
         className={css.avatar}
       />
       <span className={css.name}>Welcome, user</span>
+    
+    <NavLink to="/contacts" className={css.link}>
+        Contacts
+      </NavLink>
+  
       <Button
         color="secondary"
         variant="outlined"
         type="button"
+        onClick={() => dispatch(authOperations.logOut())}
       >
         Log out
       </Button>
-    </div>
+     </div>
   )
 };
 
