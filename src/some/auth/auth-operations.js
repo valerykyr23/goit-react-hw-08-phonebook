@@ -11,7 +11,7 @@ axios.defaults.baseURL = "https://connections-api.herokuapp.com";
         try {
             const { data } = await axios.post("/users/signup", credentials);
             Notiflix.Notify.success(
-          `New user was successfully created`
+          `New user was successfully created !`
         );
             return data;
         }
@@ -30,6 +30,9 @@ const logIn = createAsyncThunk(
     async (credentials, thunkAPI) => {
         try {
             const { data } = await axios.post("/users/login", credentials);
+            Notiflix.Notify.success(
+          `You successfully logged in !`
+        );
             return data;
         }
         catch (error) {
