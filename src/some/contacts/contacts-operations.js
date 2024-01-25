@@ -3,17 +3,21 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import Notiflix from 'notiflix';
 
 
+
 axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
 
-const token = {
-    set(token) {
-axios.defaults.headers.common.Authorization = `Bearer ${token}`
-    },
-    unset() {
-        axios.defaults.headers.common.Authorization = '';
-    }
-}
+// const token = {
+//     set(token) {
+// axios.defaults.headers.common.Authorization = `Bearer ${token}`
+//     },
+//     unset() {
+//         axios.defaults.headers.common.Authorization = '';
+//     }
+// }
+
+
+
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -21,7 +25,7 @@ export const fetchContacts = createAsyncThunk(
     try {
         const { data } = await axios.get('/contacts');
 
- token.set(data.token);
+//  token.set(data.token);
 
         Notiflix.Notify.success(
           `We found your contacts`
@@ -50,9 +54,8 @@ export const addContact = createAsyncThunk(
         );
         return thunkAPI.rejectWithValue('Contact already exist');
       } else {
-          const { data } = await axios.post('/contacts', newContact);
-
-           token.set(data.token);
+        const { data } = await axios.post('/contacts', newContact);
+    
 
         Notiflix.Notify.success(
           `Contact with name '${newContact.name}' has been added succesfully to contacts list.`
@@ -75,7 +78,7 @@ export const deleteContact = createAsyncThunk(
     try {
         const { data } = await axios.delete(`/contacts/${contactID}`);
 
- token.set(data.token);
+//  token.set(data.token);
 
         Notiflix.Notify.success(
           `Contact was successfully deleted`
