@@ -1,7 +1,21 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 4px solid;
-    border-image: linear-gradient(to right, #833ab4, #f50057, #fcb045, #b345fc) 47% 0%;
+.appNav {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+}
+
+
+/* .navLink :nth-child(2n + 1) {
+  margin-right: 50px;
+} */
+
+.navLink {
+    margin-right: 50px;
+}
+
+.appContainer {
+  padding: 0 15px;
+  width: 1000px;
 }

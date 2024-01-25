@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
 import authOperations from "some/auth/auth-operations";
 import css from "./UserNav.module.css";
 
@@ -21,9 +20,6 @@ const UserNav = () => {
       />
       <span className={css.name}>Welcome, user</span>
     
-    <NavLink to="/contacts" className={css.link}>
-        Contacts
-      </NavLink>
   
       <Button
         color="secondary"
