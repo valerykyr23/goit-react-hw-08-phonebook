@@ -1,21 +1,22 @@
 .appNav {
   display: flex;
-  gap: 30px;
   justify-content: space-between;
-  height: 50px;
-  align-items: center;
 }
 
-
-/* .navLink :nth-child(2n + 1) {
-  margin-right: 50px;
-} */
-
-.navLink {
-    margin-right: 50px;
-}
 
 .appContainer {
-  padding: 0 15px;
-  width: 1000px;
+  padding:  20px;
+    width: 1000;
+    background-color: gray;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.navLink {
+  text-decoration: none;
+  color:black;
+}
+
+.navLink:nth-child(2n + 1) {
+  margin-right: 20px;
 }

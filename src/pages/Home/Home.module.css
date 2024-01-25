@@ -1,7 +1,9 @@
 .wrapper {
-    background: linear-gradient(to right, #833ab4, #f50057, #fcb045, #b345fc) 47% 0%;
+    height: 300px;
+    background: white;
     padding: 40px 0;
     text-align: center;
+    opacity: 0.6
 }
 
 .title {
