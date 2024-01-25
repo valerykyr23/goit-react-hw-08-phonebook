@@ -2,15 +2,18 @@
 import UserNav from 'components/UserNav/UserNav';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { selectIsLoggedIn} from 'some/auth/auth-selectors';
+import { selectIsLoading, selectIsLoggedIn} from 'some/auth/auth-selectors';
 import css from './AppBar.module.css';
+import { Loader } from 'components/Loader/Loader';
 
 const AppBar = () => {
+  
   const userLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoading = useSelector(selectIsLoading);
 
   return (
     <header>
-      {/* {isLoading && <Spiner />} */}
+      {isLoading && <Loader/>}
 
       <div  className={css.appContainer}>
               <nav className={css.appNav}>

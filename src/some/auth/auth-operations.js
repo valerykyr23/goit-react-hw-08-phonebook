@@ -59,32 +59,54 @@ const logIn = createAsyncThunk(
 
 
 const logOut = createAsyncThunk(
-    'auth/logout', 
+    'auth/logout',
     async (thunkAPI) => {
     
         try {
             await axios.post("/users/logout");
             Notiflix.Notify.success(
-          `You successfully logged out !`
+                `You successfully logged out !`
             );
             token.unset();
             
-     }
+        }
         catch (error) {
             Notiflix.Notify.failure(
                 `User could not be logged out`
             );
-        return thunkAPI.rejectWithValue(error.message);
+            return thunkAPI.rejectWithValue(error.message);
+        }
     }
-}
     
-)
+);
+
+export const refreshUser = createAsyncThunk(
+  'auth/refreshUser',
+  async (thunkAPI) => {
+
+    try {
+        const { data } = await axios.get('/users/current');
+Notiflix.Notify.success(
+                `User is refreshed`
+            );
+        token.set(data.token);
+
+      return data;
+    } catch (error) {
+        Notiflix.Notify.failure(
+                `Unable to refresh user`
+            );
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 
 const authOperations = {
     register,
     logIn,
-    logOut
+    logOut,
+    refreshUser
 };
 
 export default authOperations;
