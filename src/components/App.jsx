@@ -4,6 +4,11 @@ import Login from "pages/Login/Login";
 import Register from "pages/Register/Register";
 import Contacts from "pages/Contacts/Contacts";
 import Layout from "./Layout/Layout";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { refreshUser } from "some/auth/auth-operations";
+import { selectIsRefreshing } from "some/auth/auth-selectors";
+import { Loader } from "./Loader/Loader";
 
 
 // export const App = () => {
@@ -29,16 +34,18 @@ import Layout from "./Layout/Layout";
 // const Contacts = lazy(() => import(''));
 
 export const App = () => {
-  // const dispatch = useDispatch();
+  
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(refreshUser()); // для обновления токена
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser()); 
+  }, [dispatch]);
 
-  // const { isRefreshing } = useSelector(state => state.auth);
+  const isRefresh = useSelector(selectIsRefreshing);
 
  
-  return (
+  return !isRefresh ? ( 
+    <>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -47,6 +54,9 @@ export const App = () => {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
-    </Routes>
+      </Routes>
+      </>
+  ) : (
+    <Loader/>
   );
-};
+}
