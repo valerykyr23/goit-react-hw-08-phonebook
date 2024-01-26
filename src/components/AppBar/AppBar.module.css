@@ -19,7 +19,7 @@
 }
 
 .navLink:nth-child(2n + 1) {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .title {
@@ -29,3 +29,16 @@
   font-family: "Times New Roman", Times, serif;
 }
 
+.rightSideNavApp {
+  display: flex;
+  align-items: center;
+}
+
+.leftSideNavApp {
+  display: flex;
+  align-items: center;
+}
+
+.decorIcon {
+  margin-right: 10px;
+}

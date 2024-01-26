@@ -4,6 +4,10 @@ import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from 'some/auth/auth-selectors';
 import css from './AppBar.module.css';
 // import { Loader } from 'components/Loader/Loader';
+import { IoMdHome } from "react-icons/io";
+import { RiContactsBookFill } from "react-icons/ri";
+import { RiLoginBoxFill } from "react-icons/ri";
+import { MdManageAccounts } from "react-icons/md";
 
 const AppBar = () => {
   const userLoggedIn = useSelector(selectIsLoggedIn);
@@ -15,15 +19,16 @@ const AppBar = () => {
 <div className={css.appContainer}>
       <nav className={css.appNav}>
 
-        <div >
+        <div className={css.rightSideNavApp}>
         <NavLink to="/" className={css.navLink}>
           Home
-        </NavLink>
+            </NavLink>
+            <IoMdHome className={css.decorIcon} />
 
           <NavLink className={css.navLink} to="/contacts">
             Contacts
           </NavLink>
-        
+        <RiContactsBookFill className={css.decorIcon}/>
             
         </div>
         
@@ -31,14 +36,17 @@ const AppBar = () => {
         {userLoggedIn ? (
           <UserNav />
         ) : (
-          <>
+          <div className={css.leftSideNavApp}>
             <NavLink to="/register" className={css.navLink}>
               Register
-            </NavLink>
+                  </NavLink>
+                  <MdManageAccounts className={css.decorIcon}/>
+                 
             <NavLink className={css.navLink} to="/login">
               Log in
-            </NavLink>
-          </>
+                  </NavLink>
+                  <RiLoginBoxFill className={css.decorIcon}/>
+          </div>
           )}
           </div>
         </nav>

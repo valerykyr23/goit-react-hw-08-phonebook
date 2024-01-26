@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import authOperations from "some/auth/auth-operations";
 import { selectUserEmail} from "some/auth/auth-selectors";
 import css from "./UserNav.module.css";
+import { IoLogOut } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
 
 
 
@@ -15,12 +17,13 @@ const UserNav = () => {
 
   return (
     <div className={css.container}>
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+      {/* <img
+        src="https: "
         alt="Default Avatar"
-        width="32"
+        width="35"
         className={css.avatar}
-      />
+      /> */}
+      <FaUserCircle/>
       <span className={css.name}>{`Welcome, ${userEmail}`}</span>
     
   
@@ -31,8 +34,10 @@ const UserNav = () => {
         size="large"
         onClick={() => dispatch(authOperations.logOut())}
       >
-        Log out
+        Log out <IoLogOut/>
+        
       </Button>
+      
      </div>
   )
 };
