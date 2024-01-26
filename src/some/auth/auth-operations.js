@@ -2,6 +2,9 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import Notiflix from "notiflix";
 
+Notiflix.Notify.init({
+    distance: '100px',
+});
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 

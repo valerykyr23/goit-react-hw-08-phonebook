@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import authOperations from "some/auth/auth-operations";
 import { selectUserEmail} from "some/auth/auth-selectors";
 import css from "./UserNav.module.css";
-import { IoLogOut } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 
 
@@ -34,7 +33,7 @@ const UserNav = () => {
         size="large"
         onClick={() => dispatch(authOperations.logOut())}
       >
-        Log out <IoLogOut/>
+        Log out 
         
       </Button>
       

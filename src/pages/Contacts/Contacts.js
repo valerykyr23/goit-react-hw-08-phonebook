@@ -20,8 +20,12 @@ const Contacts = () => {
     dispatch(fetchContacts()); 
   }, [dispatch]);
 
-    return (
-        <div className={css.wrapper}>
+  return (
+
+    <div >
+      
+      <div className={css.wrapper}>
+        
       <h1 className={css.title}>Phonebook</h1>
       <ContactForm />
         <h2 className={css.title}>Contacts</h2>
@@ -29,7 +33,8 @@ const Contacts = () => {
      
         <ContactList />
         {isLoading && <Loader />}
-    </div>)
+      </div>
+      </div>)
 };
 
 export default Contacts;

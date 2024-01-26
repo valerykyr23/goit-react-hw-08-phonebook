@@ -15,6 +15,7 @@
         5px 6px 14px 4px rgba(0, 0, 0, 0);
     box-shadow: 0px 10px 13px -7px #000000, 5px 6px 14px 4px rgba(0, 0, 0, 0);
     font-family: "Times New Roman", Times, serif;
+    opacity: 0.8;
 }
 
 .contactItem {
