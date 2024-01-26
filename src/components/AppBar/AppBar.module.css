@@ -1,13 +1,14 @@
 .appNav {
   display: flex;
   justify-content: space-between;
+  font-family: "Times New Roman", Times, serif;
 }
 
 
 .appContainer {
   padding:  20px;
     width: 1000;
-    background-color: gray;
+    background-color: #628dde;
     font-size: 30px;
     font-weight: 500;
 }
@@ -20,3 +21,11 @@
 .navLink:nth-child(2n + 1) {
   margin-right: 20px;
 }
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+}
+

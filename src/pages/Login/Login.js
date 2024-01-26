@@ -61,9 +61,9 @@ const Login = () => {
    
         <Button
           variant="contained"
-          color="success"
           size="large"
-          type="submit"
+        type="submit"
+        color="primary"
         >
           Log in
         </Button>

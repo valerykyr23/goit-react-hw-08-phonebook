@@ -25,7 +25,7 @@ const UserNav = () => {
     
   
       <Button
-       color="success"
+       color="primary"
         variant="contained"
         type="button"
         size="large"

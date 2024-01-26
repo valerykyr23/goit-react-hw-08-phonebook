@@ -3,19 +3,16 @@
     background: white;
     padding: 40px 0;
     text-align: center;
-    opacity: 0.6
+    color: black
 }
 
-.title {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 35px;
-}
+
 
 .text {
+    font-family: "Times New Roman", Times, serif;
     margin-bottom: 10px;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 500;
     /* background: linear-gradient(to right, #833ab4, #f50057, #fcb045, #b345fc) 47% 0%; */
     /* -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */

@@ -15,7 +15,7 @@ const AppBar = () => {
 <div className={css.appContainer}>
       <nav className={css.appNav}>
 
-        <div>
+        <div >
         <NavLink to="/" className={css.navLink}>
           Home
         </NavLink>
@@ -24,6 +24,7 @@ const AppBar = () => {
             Contacts
           </NavLink>
         
+            
         </div>
         
         <div>

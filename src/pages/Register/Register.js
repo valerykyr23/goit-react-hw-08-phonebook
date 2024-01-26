@@ -68,7 +68,7 @@ const Register = () => {
       
         <Button
           variant="contained"
-          color="success"
+          color="primary"
           size="large"
           type="submit"
         >

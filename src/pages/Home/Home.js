@@ -6,10 +6,11 @@ const Home = () => {
 
     return (
         <div className={css.wrapper}>
-            <h1 className={css.title}>People.Relationships.Actions</h1>
+            {/* <h1 className={css.title}>People.Relationships.Actions</h1> */}
             <p className={css.text}>Welcome to your personal PhoneBook !</p>
+            <img  src="https://img.freepik.com/free-vector/get-touch-concept-illustration_114360-2586.jpg" alt="" width="700" height="700"></img>
 </div>
- 
+//  https://www.shutterstock.com/image-vector/two-girls-talk-on-phone-600nw-1952146495.jpg
 
        
     )
