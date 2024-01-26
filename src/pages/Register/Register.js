@@ -21,8 +21,10 @@ const Register = () => {
   };
 
   const handleSubmit = e => {
+    
     e.preventDefault();
     dispatch(authOperations.register({ ...form }));
+    dispatch(authOperations.logIn({...form})) // auto log in
     setForm({ name: '', email: '', password: '' });
   };
 
@@ -33,7 +35,6 @@ const Register = () => {
       <TextField
         label="Name"
         variant="outlined"
-        color="secondary"
         type="text"
         name="name"
         value={name}
@@ -45,7 +46,6 @@ const Register = () => {
       <TextField
         label="Email"
         variant="outlined"
-        color="secondary"
         type="email"
         name="email"
         value={email}
@@ -57,7 +57,6 @@ const Register = () => {
       <TextField
         label="Password"
         variant="outlined"
-        color="secondary"
         type="password"
         name="password"
         value={password}
@@ -69,7 +68,7 @@ const Register = () => {
       
         <Button
           variant="contained"
-          color="secondary"
+          color="success"
           size="large"
           type="submit"
         >

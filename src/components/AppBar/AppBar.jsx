@@ -20,11 +20,10 @@ const AppBar = () => {
           Home
         </NavLink>
 
-        {userLoggedIn && (
           <NavLink className={css.navLink} to="/contacts">
             Contacts
           </NavLink>
-        )}
+        
         </div>
         
         <div>

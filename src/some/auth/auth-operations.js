@@ -86,16 +86,16 @@ export const refreshUser = createAsyncThunk(
 
     try {
         const { data } = await axios.get('/users/current');
-Notiflix.Notify.success(
-                `User is refreshed`
-            );
+// Notiflix.Notify.success(
+//                 `User is refreshed`
+//             );
         token.set(data.token);
 
       return data;
     } catch (error) {
-        Notiflix.Notify.failure(
-                `Unable to refresh user`
-            );
+        // Notiflix.Notify.failure(
+        //         `Unable to refresh user`
+        //     );
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -106,7 +106,7 @@ const authOperations = {
     register,
     logIn,
     logOut,
-    refreshUser
+   refreshUser
 };
 
 export default authOperations;

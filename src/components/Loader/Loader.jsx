@@ -8,7 +8,7 @@ export const Loader = () => {
         visible={true}
         height="180"
         width="180"
-        color="#154360"
+        color="#006600"
         ariaLabel="circles-loading"
         wrapperStyle={{ position: 'absolute' }}
         wrapperClass="blocks-wrapper"

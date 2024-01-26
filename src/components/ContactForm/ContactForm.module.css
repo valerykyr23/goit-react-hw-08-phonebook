@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-height: 100vh;
+    height: 200px;
+    width: 300px;
     padding: 20px;
-    border-color: rgb(164, 22, 164);
+    border-color: black;
     border-style: solid;
     background-color: whitesmoke;
     -webkit-box-shadow: 0px 10px 13px -7px #000000,
@@ -42,6 +43,6 @@
 }
 
 .addButton:hover {
-    background-color: purple;
+    background-color: #006600;
     cursor: pointer;
 }

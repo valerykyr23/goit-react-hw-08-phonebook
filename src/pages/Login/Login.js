@@ -41,7 +41,6 @@ const Login = () => {
       <TextField
         label="Email"
         variant="outlined"
-        color="secondary"
         type="email"
         name="email"
         value={email}
@@ -52,7 +51,6 @@ const Login = () => {
       <TextField
         label="Password"
         variant="outlined"
-        color="secondary"
         type="password"
         name="password"
         value={password}
@@ -63,7 +61,7 @@ const Login = () => {
    
         <Button
           variant="contained"
-          color="secondary"
+          color="success"
           size="large"
           type="submit"
         >

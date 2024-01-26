@@ -86,7 +86,7 @@ export const deleteContact = createAsyncThunk(
       return data;
     } catch (error) {
         Notiflix.Notify.failure(
-          `We could not delete the selcted contact`
+          `The selected contact cannot be delted`
         );
       return thunkAPI.rejectWithValue(error.message);
     }
