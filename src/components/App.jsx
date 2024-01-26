@@ -1,24 +1,20 @@
 import { Route, Navigate, Routes} from "react-router-dom";
 import Layout from "./Layout/Layout";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect,  lazy } from "react";
+import { useDispatch} from "react-redux";
+import { useEffect,  lazy} from "react";
 import { refreshUser } from "some/auth/auth-operations";
-import { selectIsRefreshing } from "some/auth/auth-selectors";
-import { Loader } from "./Loader/Loader";
-import Home from "pages/Home/Home";
-import Login from "pages/Login/Login";
-import Register from "pages/Register/Register";
-import Contacts from "pages/Contacts/Contacts";
+// import { selectIsRefreshing } from "some/auth/auth-selectors";
+// import { Loader } from "./Loader/Loader";
 import { PrivateRoute } from "./privateRoute";
 import { PublicteRoute } from "./publicRoute";
 
 
+const Register = lazy(() => import('../pages/Register/Register'));
+const Login = lazy(() => import("../pages/Login/Login"));
+const Home = lazy(() => import('../pages/Home/Home'));
+const Contacts = lazy(() => import("../pages/Contacts/Contacts"));
 
 
-// const Register = lazy(() => import('pages/Register/Register'));
-// const Home = lazy(() => import('pages/Home/Home'));
-// const Login = lazy(() => import('pages/Login/Login'));
-// const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 
 export const App = () => {
   
@@ -28,10 +24,11 @@ export const App = () => {
     dispatch(refreshUser()); 
   }, [dispatch]);
 
-  const  isRefreshing = useSelector(selectIsRefreshing);
+  // const  isRefreshing = useSelector(selectIsRefreshing);
+  // !isRefreshing ?
 
 
-  return !isRefreshing ? (
+  return  (
     <>
       
       <Routes>
@@ -49,16 +46,22 @@ export const App = () => {
           <Route
             path="/login"
             element={
+             
               <PublicteRoute>
                 <Login />
-              </PublicteRoute>} />
+                </PublicteRoute>
+                
+             } />
             
           <Route
             path="/register"
             element={
+              
               <PublicteRoute>
                 <Register />
-              </PublicteRoute>}
+                </PublicteRoute>
+               
+              }
               />
             
           
@@ -67,7 +70,7 @@ export const App = () => {
       </Routes>
 
     </>
-  ) : (<Loader/>)
+  ) 
     
   
 };

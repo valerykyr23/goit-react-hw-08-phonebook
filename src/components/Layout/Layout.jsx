@@ -1,11 +1,8 @@
-// import AuthNav from 'components/AuthNav/AuthNav';
-// import UserNav from 'components/UserNav/UserNav';
-// import { useSelector } from 'react-redux';
-// import { NavLink, Outlet } from 'react-router-dom';
-// import { selectUserName } from 'some/auth/auth-selectors';
-// import css from './Layout.module.css';
+
 import AppBar from "components/AppBar/AppBar";
 import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
+import { Loader } from "components/Loader/Loader";
 
 const Layout = () => {
 
@@ -16,9 +13,10 @@ const Layout = () => {
     <>
       
       <AppBar />
+      <Suspense fallback={<Loader/>}>
     
         <Outlet />
-     
+     </Suspense>
     </>
   );
 };
