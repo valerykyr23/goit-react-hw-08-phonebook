@@ -1,5 +1,5 @@
 .wrapper {
-    max-width: 780px;
+    max-width: 600px;
     margin: 0 auto; 
     padding-top: 30px; 
     text-align: center;
@@ -8,7 +8,8 @@
     justify-content: center;
     align-items: center;
     font-family: "Times New Roman", Times, serif;
-    background-image: url("images/two-people-man-woman-character-talking-smart-phone-online-communication-email-message-concept-video-call-business-chat-242889380.webp");
+    background-image: url("images/istockphoto-1160018654-612x612.jpg");
+    background-repeat: no-repeat;
    
 }
 
