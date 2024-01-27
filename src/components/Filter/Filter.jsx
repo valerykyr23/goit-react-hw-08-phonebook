@@ -1,10 +1,9 @@
-import css from "./Filter.module.css";
+import css from './Filter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { filterContacts } from "some/contacts/FilterSlice";
-import { selectFilter } from "some/contacts/contacts-selectors";
+import { filterContacts } from 'some/contacts/FilterSlice';
+import { selectFilter } from 'some/contacts/contacts-selectors';
 
 export const Filter = () => {
-  
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
 
@@ -32,5 +31,3 @@ export const Filter = () => {
     </div>
   );
 };
-
-

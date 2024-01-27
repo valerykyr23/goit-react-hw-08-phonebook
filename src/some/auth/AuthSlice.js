@@ -1,5 +1,4 @@
 import authOperations from './auth-operations';
-
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -8,7 +7,7 @@ const initialState = {
   isLoggedIn: false,
   error: null,
   isRefreshing: false,
-    isLoading: false
+  isLoading: false,
 };
 
 const AuthSlice = createSlice({
@@ -54,19 +53,19 @@ const AuthSlice = createSlice({
       })
 
       .addCase(authOperations.logOut.fulfilled, state => {
-          state.user = { name: null, email: null };
-          state.token = null;
-          state.isLoggedIn = false;
-        state.error = null; 
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+        state.error = null;
         state.isRefreshing = false;
         state.isLoading = false;
       })
-    .addCase(authOperations.logOut.rejected, (state, action) => {
+      .addCase(authOperations.logOut.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
-    })
-    
-    .addCase(authOperations.refreshUser.pending, state => {
+      })
+
+      .addCase(authOperations.refreshUser.pending, state => {
         state.isRefreshing = true;
       })
       .addCase(authOperations.refreshUser.fulfilled, (state, action) => {
@@ -74,7 +73,7 @@ const AuthSlice = createSlice({
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
-      .addCase(authOperations.refreshUser.rejected, (state) => {
+      .addCase(authOperations.refreshUser.rejected, state => {
         state.isRefreshing = false;
       });
   },

@@ -6,6 +6,3 @@
     color: var(--primaryTextColor);
 }
 
-.activeLink {
-    color: var(--accentColor);
-}

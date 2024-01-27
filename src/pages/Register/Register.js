@@ -1,30 +1,23 @@
-import { useDispatch } from "react-redux";
-import css from "./Register.module.css";
-import authOperations from "some/auth/auth-operations";
-import { useState } from "react";
-const { TextField, Button } = require("@mui/material");
-
+import { useDispatch } from 'react-redux';
+import css from './Register.module.css';
+import authOperations from 'some/auth/auth-operations';
+import { useState } from 'react';
+const { TextField, Button } = require('@mui/material');
 
 const Register = () => {
-
   const dispatch = useDispatch();
 
   const [form, setForm] = useState({ name: '', email: '', password: '' });
-  
-  
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
     setForm(prevForm => ({ ...prevForm, [name]: value }));
-    
-  
   };
 
   const handleSubmit = e => {
-    
     e.preventDefault();
     dispatch(authOperations.register({ ...form }));
-    dispatch(authOperations.logIn({...form})) // auto log in
+    dispatch(authOperations.logIn({ ...form })); // auto log in
     setForm({ name: '', email: '', password: '' });
   };
 
@@ -38,9 +31,8 @@ const Register = () => {
         type="text"
         name="name"
         value={name}
-          onChange={handleChange}
+        onChange={handleChange}
         className={css.textField}
-        
       />
 
       <TextField
@@ -49,9 +41,8 @@ const Register = () => {
         type="email"
         name="email"
         value={email}
-          onChange={handleChange}
+        onChange={handleChange}
         className={css.textField}
-        
       />
 
       <TextField
@@ -60,22 +51,14 @@ const Register = () => {
         type="password"
         name="password"
         value={password}
-          onChange={handleChange}
+        onChange={handleChange}
         className={css.textField}
-        
       />
 
-      
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          type="submit"
-        >
-          Sign up
+      <Button variant="contained" color="primary" size="large" type="submit">
+        Sign up
       </Button>
-      </form>
-     
+    </form>
   );
 };
 
